@@ -25,24 +25,25 @@ export default function Landing() {
         <Logo />
         <div className="nav-links">
           <a href="#how">how it works</a>
-          <a href="#features">what it ports</a>
+          <a href="#features">what it recovers</a>
           <Link href="/port" className="btn btn-small">open porter</Link>
         </div>
       </nav>
 
       <header className="hero">
-        <p className="eyebrow"><span className="pulse" /> php → javascript, right in your browser</p>
+        <p className="eyebrow"><span className="pulse" /> reverse engineering for php apps, right in your browser</p>
         <h1>
-          Move your <span className="strike">PHP</span><br />
-          <em>to</em> JavaScript.
+          Reverse engineer<br />
+          your <span className="strike">PHP</span> app<br />
+          <em>into</em> JS source.
         </h1>
         <div className="hero-foot">
           <p className="lede">
-            drop a folder of up to ten php files and porter rewrites the syntax, arrays, classes and builtins into
-            modern js. no signup, no api keys, and your code never leaves the tab.
+            drop a folder of up to ten php files and porter reverse engineers the logic, arrays, classes and builtins
+            back out as clean javascript source. no signup, no api keys, and your code never leaves the tab.
           </p>
           <div className="cta-row">
-            <Link href="/port" className="btn">start porting <span>↗</span></Link>
+            <Link href="/port" className="btn">reverse engineer my app <span>↗</span></Link>
             <a href="#demo" className="btn btn-ghost">try it here</a>
           </div>
         </div>
@@ -59,7 +60,7 @@ export default function Landing() {
       <section id="demo" className="section">
         <div className="section-head">
           <span className="num">(01)</span>
-          <h2>Type php. <em>Watch it turn.</em></h2>
+          <h2>Feed it php. <em>Get the source.</em></h2>
         </div>
         <LiveDemo />
       </section>
@@ -71,15 +72,15 @@ export default function Landing() {
         </div>
         <ol className="steps">
           <li><span>01</span><h3>Drop a folder</h3><p>drag a project in. porter picks up to ten .php files and skips vendor and node_modules.</p></li>
-          <li><span>02</span><h3>Read the port</h3><p>flip between files, edit the php and watch the js update. notes flag what needs a human.</p></li>
-          <li><span>03</span><h3>Take the zip</h3><p>download every ported file in one zip, same folder layout, .php swapped for .js.</p></li>
+          <li><span>02</span><h3>Read the source</h3><p>flip between files, tweak the php and watch the recovered js update. notes flag what needs a human.</p></li>
+          <li><span>03</span><h3>Take the zip</h3><p>download the whole js source in one zip, same folder layout, .php swapped for .js.</p></li>
         </ol>
       </section>
 
       <section id="features" className="section">
         <div className="section-head">
           <span className="num">(03)</span>
-          <h2>What it <em>actually</em> ports.</h2>
+          <h2>What it <em>actually</em> recovers.</h2>
         </div>
         <div className="features">
           {FEATURES.map(([title, body]) => (
@@ -87,13 +88,13 @@ export default function Landing() {
           ))}
         </div>
         <p className="honest">
-          porter is rule based, so it is a head start, not a magic button. database calls, sessions, sprintf, dates and
-          file io get flagged for you to port by hand.
+          porter is rule based, so it hands you a solid first draft of your js source, not a magic button. database calls, sessions, sprintf, dates and
+          file io get flagged for you to finish by hand.
         </p>
       </section>
 
       <footer className="footer">
-        <Link href="/port" className="mega">Start porting<span>↗</span></Link>
+        <Link href="/port" className="mega">Reverse it<span>↗</span></Link>
         <div className="footer-row">
           <Logo />
           <span>runs 100% client side · open source</span>

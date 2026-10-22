@@ -6,8 +6,8 @@ const serif = Instrument_Serif({ subsets: ['latin'], weight: '400', style: ['nor
 const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
 
 export const metadata = {
-  title: 'porter: php to javascript',
-  description: 'drop a php folder, get javascript back. runs entirely in your browser.',
+  title: 'porter: reverse engineer php into js',
+  description: 'reverse engineer your php app into javascript source. runs entirely in your browser.',
 };
 
 export default function RootLayout({ children }) {

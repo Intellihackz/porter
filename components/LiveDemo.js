@@ -22,7 +22,7 @@ export default function LiveDemo() {
       </div>
       <div className="demo-arrow" aria-hidden>→</div>
       <div className="demo-pane out">
-        <div className="demo-label"><span className="dot lime" />output.js</div>
+        <div className="demo-label"><span className="dot lime" />source.js</div>
         <pre>{js}</pre>
       </div>
     </div>
