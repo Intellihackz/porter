@@ -38,7 +38,6 @@ body::before {
 }
 
 a { color: inherit; text-decoration: none; }
-code, pre, textarea { font-variant-ligatures: none; }
 em { font-family: var(--serif); font-style: italic; font-weight: 400; }
 ::selection { background: var(--lime); color: var(--bg); }
 
@@ -339,3 +338,6 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* no => or -> arrow ligatures in code. kept last so the font shorthands above can't reset it */
+code, pre, textarea, .marquee code, .demo textarea, .demo pre, .pane textarea { font-variant-ligatures: none; }
