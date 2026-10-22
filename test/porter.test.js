@@ -32,6 +32,23 @@ test('variables first set in a block are hoisted', () => {
   valid(code);
 });
 
+test('methods named like builtins are left alone', () => {
+  const { code } = portPhp('<?php class Cart { public function count(): int { return count($this->items); } }');
+  assert.match(code, /count\(\) \{\s*return this\.items\.length;/);
+  valid(code);
+});
+
+test('constructor promotion assigns the properties', () => {
+  const { code } = portPhp('<?php class U { public function __construct(public string $email, private $name) {} }');
+  assert.match(code, /constructor\(email, name\) \{ this\.email = email; this\.name = name;\}/);
+  valid(code);
+});
+
+test('round keeps its precision argument', () => {
+  const { code } = portPhp('<?php $t = round($x * 1.08, 2);');
+  assert.match(code, /Math\.round\(\(x \* 1\.08\) \* 10 \*\* 2\) \/ 10 \*\* 2/);
+});
+
 test('builtins are mapped', () => {
   const { code } = portPhp('<?php $s = strtoupper(trim($t)); $n = count($list);');
   assert.match(code, /t\.trim\(\)\.toUpperCase\(\)/);
