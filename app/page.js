@@ -97,7 +97,7 @@ export default function Landing() {
         <Link href="/port" className="mega">Reverse it<span>↗</span></Link>
         <div className="footer-row">
           <Logo />
-          <span>runs 100% client side · open source</span>
+          <span>useporter.lol · runs 100% client side</span>
         </div>
       </footer>
     </div>

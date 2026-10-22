@@ -6,8 +6,8 @@ const serif = Instrument_Serif({ subsets: ['latin'], weight: '400', style: ['nor
 const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
 
 export const metadata = {
-  // set SITE_URL to your domain so link previews use absolute urls
-  metadataBase: new URL(process.env.SITE_URL || 'http://localhost:3000'),
+  // link previews need absolute urls, SITE_URL overrides for previews/staging
+  metadataBase: new URL(process.env.SITE_URL || 'https://useporter.lol'),
   title: 'porter: reverse engineer php into js',
   description: 'reverse engineer your php app into javascript source. runs entirely in your browser.',
   twitter: { card: 'summary_large_image' },

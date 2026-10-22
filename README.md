@@ -14,4 +14,4 @@ the whole converter lives in `lib/porter.js` if you want to add more rules.
 
 ## brand
 
-everything lives in `brand/`: `icon.png` (512, favicon / app icon), `apple-icon.png` (180), `x-avatar.png` (400x400), `x-header.png` (1500x500), `og-image.png` (1200x630 link preview) and `wordmark.png` (transparent, for dark backgrounds). they're rendered from `brand/source.html`, so tweak that and re-screenshot if you want changes. the site already uses the icon and og image, just set `SITE_URL=https://yourdomain.com` when deploying so link previews resolve.
+everything lives in `brand/`: `icon.png` (512, favicon / app icon), `apple-icon.png` (180), `x-avatar.png` (400x400), `x-header.png` (1500x500), `og-image.png` (1200x630 link preview) and `wordmark.png` (transparent, for dark backgrounds). they're rendered from `brand/source.html`, so tweak that and re-screenshot if you want changes. the site already uses the icon and og image, link previews point at https://useporter.lol by default, set `SITE_URL` to override it (for example on preview deploys).
