@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500;700&display=block" rel="stylesheet">
+<style>
+  :root { --bg:#0b0b0c; --ink:#f2efe8; --muted:#8a877f; --lime:#c6ff3d; --php:#8b8cff; --line:#26262a; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #333; padding: 40px; display: flex; flex-direction: column; gap: 40px; align-items: flex-start; font-family: 'Inter Tight', sans-serif; color: var(--ink); }
+  .asset { position: relative; overflow: hidden; flex: none; }
+  .grain::after { content:''; position:absolute; inset:0; opacity:.07; pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .mono { font-family: 'JetBrains Mono', monospace; font-variant-ligatures: none; }
+  em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+  .strike { position: relative; color: var(--php); }
+  .strike::after { content:''; position:absolute; left:-2%; right:-2%; top:52%; height:.07em; background:var(--ink); }
+
+  /* the mark: lime square with <? */
+  .mark { display:grid; place-items:center; background:var(--lime); color:var(--bg); font-family:'JetBrains Mono',monospace; font-weight:700; letter-spacing:-.13em; }
+
+  #icon { width:512px; height:512px; border-radius:112px; font-size:250px; padding-right:12px; }
+  #apple { width:180px; height:180px; font-size:88px; padding-right:4px; }
+  #avatar { width:400px; height:400px; font-size:176px; padding-right:8px; }
+
+  #wordmark { display:flex; align-items:center; gap:36px; padding:40px; background:transparent; }
+  #wordmark .mark { width:200px; height:200px; border-radius:46px; font-size:96px; padding-right:4px; }
+  #wordmark span { font-size:180px; font-weight:600; letter-spacing:-.05em; line-height:1; }
+
+  .banner { background:var(--bg); }
+  .logo { display:flex; align-items:center; gap:14px; font-weight:600; letter-spacing:-.03em; }
+  .logo .mark { border-radius:12px; }
+
+  #header { width:1500px; height:500px; padding:56px 72px; display:flex; flex-direction:column; justify-content:space-between; align-items:flex-end; text-align:right; }
+  #header h1 { font-size:104px; line-height:.9; letter-spacing:-.055em; font-weight:600; margin-top:8px; }
+  #header h1 em { color:var(--lime); letter-spacing:-.02em; }
+  #header .strip { position:absolute; left:0; right:0; bottom:0; border-top:1px solid var(--line); padding:18px 0; white-space:nowrap; font-size:20px; display:flex; gap:44px; justify-content:flex-end; padding-right:72px; }
+  .strip b { color:var(--muted); font-weight:400; margin:0 10px; }
+  .strip .from { color:var(--php); } .strip .to { color:var(--lime); }
+
+  #og { width:1200px; height:630px; padding:64px 72px; display:flex; flex-direction:column; justify-content:space-between; }
+  #og .logo { font-size:34px; } #og .logo .mark { width:52px; height:52px; font-size:22px; }
+  #og h1 { font-size:112px; line-height:.9; letter-spacing:-.055em; font-weight:600; }
+  #og h1 em { color:var(--lime); letter-spacing:-.02em; }
+  #og .foot { display:flex; justify-content:space-between; align-items:center; color:var(--muted); font-size:24px; }
+  #og .pill { padding:12px 22px; border-radius:999px; background:var(--lime); color:var(--bg); font-weight:600; }
+</style>
+</head>
+<body>
+  <div id="icon" class="asset mark">&lt;?</div>
+  <div id="apple" class="asset mark">&lt;?</div>
+  <div id="avatar" class="asset mark">&lt;?</div>
+  <div id="wordmark" class="asset"><div class="mark">&lt;?</div><span>porter</span></div>
+
+  <div id="header" class="asset banner grain">
+    <h1>Reverse engineer<br>your <span class="strike">PHP</span> app<br><em>into</em> JS source.</h1>
+    <div class="strip mono">
+      <span><span class="from">count($a)</span><b>→</b><span class="to">a.length</span></span>
+      <span><span class="from">"Hi $name"</span><b>→</b><span class="to">`Hi ${name}`</span></span>
+      <span><span class="from">['k' =&gt; 1]</span><b>→</b><span class="to">{ 'k': 1 }</span></span>
+      <span><span class="from">$this-&gt;x</span><b>→</b><span class="to">this.x</span></span>
+    </div>
+  </div>
+
+  <div id="og" class="asset banner grain">
+    <div class="logo"><div class="mark">&lt;?</div>porter</div>
+    <h1>Reverse engineer<br>your <span class="strike">PHP</span> app<br><em>into</em> JS source.</h1>
+    <div class="foot"><span>drop a folder · get js source · runs in your browser</span><span class="pill">free, no signup</span></div>
+  </div>
+</body>
+</html>
